@@ -1,3 +1,6 @@
+# PY_QGIS
+基于pyqt 和 QGIS二次开发的桌面GIS软件尝试。
+
 ## python interpreter
 - qgis 3.16: D:\installed\QGIS316\bin\python-qgis.bat
 - qgis 3.28: D:\installed\QGIS328\bin\python-qgis-ltr.bat
