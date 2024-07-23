@@ -1,0 +1,10 @@
+develop.md
+build
+dist
+data/
+images/designer
+images/icons
+snippet
+src/test
+src/resource/icons
+**/__pycache__

@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainWindow</class>
+ <widget class="QMainWindow" name="mainWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1136</width>
+    <height>659</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ynlh-GIS</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/ico/app.ico</normaloff>:/ico/app.ico</iconset>
+  </property>
+  <property name="toolTip">
+   <string>欢迎来到德莱联盟</string>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="mainWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QWidget" name="mapWidget" native="true">
+      <property name="styleSheet">
+       <string notr="true">#mapWidget{
+background-color:rgb(231, 231, 231)
+}</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1136</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="mnFile">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="openShpAction"/>
+    <addaction name="openRasterAction"/>
+    <addaction name="openGeojsonAction"/>
+   </widget>
+   <widget class="QMenu" name="muTools">
+    <property name="title">
+     <string>工具</string>
+    </property>
+    <addaction name="mbShowByAttrs"/>
+    <addaction name="actioncc"/>
+   </widget>
+   <widget class="QMenu" name="mnViews">
+    <property name="title">
+     <string>视图</string>
+    </property>
+    <addaction name="showTuCengAction"/>
+    <addaction name="actionshowFeatureByAttrs"/>
+   </widget>
+   <addaction name="mnFile"/>
+   <addaction name="muTools"/>
+   <addaction name="mnViews"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="openToolBar">
+   <property name="windowTitle">
+    <string>打开文件</string>
+   </property>
+   <property name="toolTip">
+    <string>打开文件工具条</string>
+   </property>
+   <property name="whatsThis">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;打开文件工具条&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="openShpAction"/>
+   <addaction name="openRasterAction"/>
+   <addaction name="openGeojsonAction"/>
+  </widget>
+  <widget class="QToolBar" name="tbShowByAttrs">
+   <property name="windowTitle">
+    <string>newmap</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="mbShowByAttrs"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>工具</string>
+   </property>
+   <property name="toolTip">
+    <string>工具</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QDockWidget" name="dockWidget">
+   <property name="minimumSize">
+    <size>
+     <width>150</width>
+     <height>44</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#dockWidget_2{
+background-color:rgb(226, 255, 249)
+}</string>
+   </property>
+   <property name="windowTitle">
+    <string>图层管理</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="treeViews">
+    <property name="styleSheet">
+     <string notr="true">#treeViews{
+background-color:rgb(217, 255, 230)
+}</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="dwshowattrs">
+   <property name="minimumSize">
+    <size>
+     <width>400</width>
+     <height>150</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>52400</width>
+     <height>150</height>
+    </size>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::BottomDockWidgetArea|Qt::RightDockWidgetArea|Qt::TopDockWidgetArea</set>
+   </property>
+   <property name="windowTitle">
+    <string>按属性显示要素</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_3">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout" stretch="1,2">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,0,1,0,2">
+         <item>
+          <widget class="QPushButton" name="pbloadVector">
+           <property name="text">
+            <string>加载文件</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string> 选择的字段 ：</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBox">
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maxVisibleItems">
+            <number>25</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>   当前值：</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QSlider" name="horizontalSlider">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="maximum">
+          <number>-1</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="tickPosition">
+          <enum>QSlider::TicksBelow</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="openShpAction">
+   <property name="icon">
+    <iconset resource="../resource/lhqgis.qrc">
+     <normaloff>:/icos/openV.ico</normaloff>:/icos/openV.ico</iconset>
+   </property>
+   <property name="text">
+    <string>加载shp文件</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O, Ctrl+V</string>
+   </property>
+  </action>
+  <action name="openRasterAction">
+   <property name="icon">
+    <iconset resource="../resource/lhqgis.qrc">
+     <normaloff>:/icos/openR.ico</normaloff>:/icos/openR.ico</iconset>
+   </property>
+   <property name="text">
+    <string>加载影像数据</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O, Ctrl+R</string>
+   </property>
+  </action>
+  <action name="openGeojsonAction">
+   <property name="icon">
+    <iconset resource="../resource/lhqgis.qrc">
+     <normaloff>:/icos/openG.ico</normaloff>:/icos/openG.ico</iconset>
+   </property>
+   <property name="text">
+    <string>加载Geojson文件</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O, Ctrl+G</string>
+   </property>
+  </action>
+  <action name="mbShowByAttrs">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../resource/lhqgis.qrc">
+     <normaloff>:/icos/showbyattrs.ico</normaloff>:/icos/showbyattrs.ico</iconset>
+   </property>
+   <property name="text">
+    <string>按属性显示地块窗口</string>
+   </property>
+  </action>
+  <action name="actioncc">
+   <property name="text">
+    <string>cc</string>
+   </property>
+  </action>
+  <action name="showTuCengAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>图层管理</string>
+   </property>
+  </action>
+  <action name="actionshowFeatureByAttrs">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>按属性显示要素dock</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../resource/lhqgis.qrc"/>
+ </resources>
+ <connections/>
+</ui>
